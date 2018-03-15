@@ -232,9 +232,9 @@ def argument():
 	p.add_argument('--entity_size', '-Es',      default=38194,		type=int)
 
 	# model parameters (neural network)
-	p.add_argument('--nn_model',		'-nn',  default='A0')
+	p.add_argument('--nn_model',		'-nn',  default='m2')
 	p.add_argument('--activate',		'-af',  default='relu')
-	p.add_argument('--pooling_method',	'-pM',  default='max')
+	p.add_argument('--pooling_method',	'-pM',  default='avg')
 	p.add_argument('--dim',         '-D',       default=200,    type=int)
 	p.add_argument('--order',       '-O',       default=1,      type=int)
 	p.add_argument('--threshold',   '-T',       default=300.0,  type=float)
@@ -261,8 +261,8 @@ def argument():
 	p.add_argument('--is_bernoulli_trick', '-iBeT',  default=True,   action='store_false')
 
 	# sizes
-	p.add_argument('--train_size',  	'-trS',  default=100000,       type=int)
-	p.add_argument('--batch_size',		'-bS',  default=5000,        type=int)
+	p.add_argument('--train_size',  	'-trS',  default=2000,       type=int)
+	p.add_argument('--batch_size',		'-bS',  default=2000,        type=int)
 	p.add_argument('--test_batch_size', '-tbS',  default=20000,        type=int)
 	p.add_argument('--sample_size',		'-sS',  default=64,        type=int)
 	p.add_argument('--pool_size',		'-pS',  default=128*5,      type=int)
@@ -276,6 +276,8 @@ def argument():
 	p.add_argument('--alpha3',      "-a3",  default=0,      type=float)
 	p.add_argument('--beta0',       "-b0",  default=0.01,   type=float)
 	p.add_argument('--beta1',       "-b1",  default=0.0001,  type=float)
+
+	p.add_argument('--heads_size',	"-hS",	default=2,		type=int)
 
 	# seed to control generaing random variables
 	p.add_argument('--seed',        '-seed',default=0,      type=int)

@@ -241,6 +241,7 @@ class Model(chainer.Chain):
 			neighbor.append(k)
 		x = self.get_context(neighbor,links,relations,edges,order+1,xp)
 		x = getattr(self,self.forwardB[order][0])(x,neighbor,neighbor_dict,assign,entities,relations)
+		print(x.shape)
 		return x
 
 	def train(self,positive,negative,links,relations,edges,xp):
